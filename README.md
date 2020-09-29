@@ -31,3 +31,29 @@ Les endpoints suivants sont fondamentaux. D'autres qui sont jugés utiles sont v
 Mettre en oeuvre une API de gestion des contacts. Les contacts travaillent dans une entreprise exerçant dans un secteur d'activité.
 Il est attendu de votre part de développer cette API, en mettant en oeuvre les tests unitaires, et configurer l'intégration continue avec Github Actions et le déployer sur Heroku.
 Libre à vous d'utiliser la base de données qui convient.
+
+
+## Installation
+
+Créer un environnement virtuel
+```
+virtualenv -p python3 venv
+```
+
+Installer les dépendences du projet avec `pip` :
+```
+pip install -r requirements.txt
+```
+
+
+## Exécution
+
+# en local
+Démarrer le serveur
+```
+uvicorn main:app --reload
+```
+et visiter l'adresse http://127.0.0.1:8000/ dans le navigateur.
+
+# en ligne
+Visiter le lien https://secure-island-69951.herokuapp.com dans le navigateur
