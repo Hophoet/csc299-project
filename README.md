@@ -1,5 +1,5 @@
 # TP-final-IPNet-2019-2020
-<img align="left" alt="FastAPI" width="26px" src="https://images4.programmersought.com/878/c8/c8b175f9d26f422afd56a6a20285302e.png" />
+<img align="left" alt="FastAPI" src="https://images4.programmersought.com/878/c8/c8b175f9d26f422afd56a6a20285302e.png" />
 
 
 Travaux pratiques de Lab informatique destinés aux étudiants de Licence 4 à IPNet Institute.
