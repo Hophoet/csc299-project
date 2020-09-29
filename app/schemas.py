@@ -3,31 +3,31 @@ from typing import List, Optional
 from pydantic import BaseModel
 
 class ContactBase(BaseModel):
+    """ contacts base schema """
     firstname: str
     lastname: Optional[str] = None
     email: Optional[str] = None
     phone: Optional[str] = None
     company_id: Optional[int] = None
 
-class ContactCreate(ContactBase):
-    pass
 
 class Contact(ContactBase):
+    """ contact schema on the base schema """
     id: int
 
     class Config:
         orm_mode = True
 
 class CompanyBase(BaseModel):
+    """ companies base schema """
     email: Optional[str] = None
     name: str
     activityarea_id: Optional[int] = None
 
 
-class CompanyCreate(BaseModel):
-    pass
 
 class Company(CompanyBase):
+    """ company schema on the base model """
     id: int
     contacts: List[Contact] = []
     
@@ -36,12 +36,12 @@ class Company(CompanyBase):
 
 
 class ActivityareaBase(BaseModel):
+    """ activity areas base schema """
     name: str
 
-class ActivityareaCreate(BaseModel):
-    pass
 
 class Activityarea(ActivityareaBase):
+    """ activity areas schema on the base schema """
     id: int
     companies: List[Company] = []
     

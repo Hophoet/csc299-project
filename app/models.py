@@ -4,6 +4,7 @@ from sqlalchemy.orm import relationship
 from .database import Base
 
 class Contact(Base):
+    """ contacts model """
     __tablename__ = "contacts"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -17,6 +18,7 @@ class Contact(Base):
 
 
 class Company(Base):
+    """ companies model """
     __tablename__ = "companies"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -32,6 +34,7 @@ class Company(Base):
 
 
 class Activityarea(Base):
+    """ activity areas model """
     __tablename__ = "activityareas"
 
     id = Column(Integer, primary_key=True, index=True)
