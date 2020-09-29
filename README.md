@@ -16,14 +16,14 @@ Travaux pratiques de Lab informatique destinés aux étudiants de Licence 4 à I
    
 ## Endpoints
 Les endpoints suivants sont fondamentaux. D'autres qui sont jugés utiles sont vivement encouragés.
-
+- / : présentation de l'application avec les endpoints disponible
 - /contacts/?d=0&f=20 : liste des (f-d) premiers contacts à compter de d.
-- /entreprises/?d=0&f=20 : liste des (f-d) premières entreprises à compter de d.
-- /secteurs/?d=0&f=20 : liste des (f-d) premiers secteurs à compter de d.
-- /recherche/?q=query : recherche du terme q
+- /companies/?d=0&f=20 : liste des (f-d) premières entreprises à compter de d.
+- /activityareas/?d=0&f=20 : liste des (f-d) premiers secteurs à compter de d.
+- /search/?query=q : recherche du terme query
 - /contact/id/ : contact dont l'identifiant est id
-- /entreprise/id/ : entreprise dont l'identifiant est id
-- /secteur/id/ : secteur dont l'identifiant est id
+- /company/id/ : entreprise dont l'identifiant est id
+- /activityarea/id/ : secteur dont l'identifiant est id
 
 
 ## Travail demandé :
