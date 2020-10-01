@@ -47,11 +47,17 @@ def read_contacts(d: int = 0, f: int = 100, db: Session = Depends(get_db)):
     return contacts
 
 @app.get("/contact/{contact_id}")
-def read_contact(contact_id: int, q: str = None, db: Session = Depends(get_db)):
+def read_contact(contact_id: str, q: str = None, db: Session = Depends(get_db)):
     """ specific contact getter endpoint """
     #get contact by the id 
     contact = crud.get_contact_by_id(db, contact_id)
-    return contact
+    if contact:
+        return contact
+    if contact_id.isdigit():
+    #raise not found exception
+        raise HTTPException(status_code=404, detail="contact not found")
+    else:
+        raise HTTPException(status_code=404, detail="invalid contact id. contact id must be an integer  ")
 
 
 
@@ -63,29 +69,38 @@ def read_companies(d: int = 0, f: int = 100, db: Session = Depends(get_db)):
     return companies
 
 @app.get("/company/{company_id}")
-def read_company(company_id: int, q: str = None, db: Session = Depends(get_db)):
+def read_company(company_id: str, q: str = None, db: Session = Depends(get_db)):
     """ specific company getter endpoint """
-    #get company by the id 
+        #get contact by the id 
     company = crud.get_company_by_id(db, company_id)
-    return company
-
-
+    if company:
+        return company
+    if company_id.isdigit():
+    #raise not found exception
+        raise HTTPException(status_code=404, detail="company not found")
+    else:
+        raise HTTPException(status_code=404, detail="invalid company id. contact id must be an integer  ")
 
 
 @app.get("/activityareas/", response_model=List[schemas.Activityarea])
 def read_activityareas(d: int = 0, f: int = 100, db: Session = Depends(get_db)):
-    """ all acitivity areas getter endpoint """
+    """ al l acitivity areas getter endpoint """
     #get activity areas 
     activityareas = crud.get_activityareas(db, skip=d, limit=f)
     return activityareas
 
 @app.get("/activityarea/{activityarea_id}")
-def read_activityarea(activityarea_id: int, q: str = None, db: Session = Depends(get_db)):
+def read_activityarea(activityarea_id: str, q: str = None, db: Session = Depends(get_db)):
     """ specific activity area getter endpoint """
     #get activity area  by the id 
     activityarea = crud.get_activityarea_by_id(db, activityarea_id)
-    return activityarea
-
+    if activityarea:
+        return activityarea
+    if activityarea_id.isdigit():
+    #raise not found exception
+        raise HTTPException(status_code=404, detail="activity area not found")
+    else:
+        raise HTTPException(status_code=404, detail="invalid activity area id. contact id must be an integer  ")
 
 
 @app.get("/search/")
