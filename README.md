@@ -48,8 +48,25 @@ Installer les dépendences du projet avec `pip` :
 pip install -r requirements.txt
 ```
 
+### Exécution des tests
 
-## Exécution
+Pour exécuter, lancer la commande suivante:
+
+ ```
+pytest tests.ty
+ ```
+
+Pour exécuter le coverage, lancer les commandes suivantes:
+
+  ```
+coverage run -m pytest tests.py
+ ```
+  ```
+coverage report
+ ```
+
+
+## lancement
 
 ### en local
 Démarrer le serveur
