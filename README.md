@@ -48,7 +48,7 @@ Installer les dépendences du projet avec `pip` :
 pip install -r requirements.txt
 ```
 
-### Exécution des tests
+### Tests executions
 
 Pour exécuter, lancer la commande suivante:
 
